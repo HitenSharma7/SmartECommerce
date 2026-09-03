@@ -2,17 +2,25 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import AppText from './src/components/texts/AppText';
 import AppSafeView from './src/components/Views/AppSafeView';
-
+import FlashMessage from 'react-native-flash-message';
+import AppButton from './src/components/buttons/AppButton';
+import AppTextInput from './src/components/inputs/AppTextInput';
+import SignInScreen from './src/screens/auth/SignInScreen';
 export default function App() {
   return (
+   
     <AppSafeView style={styles.container}>
-     <AppText variant='medium'>Hello World!</AppText>
-     <AppText variant='bold'>Hello World!</AppText>
-     
+       <FlashMessage position={'top'}/>
+    
+   <SignInScreen/>
+      
+   
+    
+   
     </AppSafeView>
   );
 }
 
 const styles = StyleSheet.create({
-  
+  container:{},
 });
