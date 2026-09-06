@@ -7,7 +7,7 @@ import { IMAGES } from '../../constant/image-path'
 import AppButton from '../../components/buttons/AppButton'
 import { s,vs } from 'react-native-size-matters'
 import { AppColors } from '../../styles/color'
-const SignInScreen = () => {
+const SignUpScreen = () => {
     const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
   return (
@@ -15,18 +15,17 @@ const [password, setPassword] = useState('');
     <View style={styles.container}>
  <Image source={IMAGES.appLogo} style={styles.appLogo}/>
 
-
+         <AppTextInput placeholder='Username' secureTextEntry={false} keyboardType='default'/>
        <AppTextInput placeholder='Enter your Email' secureTextEntry={false} keyboardType='email-address'/>
        <AppTextInput placeholder='Enter your Password' secureTextEntry={true} keyboardType='default'/>
         <AppText variant='bold' >Smart Bazaar</AppText>
-        <AppButton title={"Login"} />
-        <AppButton title={"SignUp"}  style={styles.signUp } textColor={AppColors.primary}
-        onPress={()=>navigation.navigate("SignUpScreen")}/>
+        <AppButton title={"Create a new Account"} />
+        <AppButton title={"SignIn"}  style={styles.signIn } textColor={AppColors.primary}/>
     </View>
   )
 }
 
-export default SignInScreen
+export default SignUpScreen
 
 const styles = StyleSheet.create({
     
@@ -41,7 +40,7 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         marginBottom: vs(30),
     },
-    signUp:{
+    signIn:{
         backgroundColor:AppColors.white,
         marginTop:s(15),
         borderWidth:1,

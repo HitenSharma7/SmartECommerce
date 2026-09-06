@@ -1,4 +1,4 @@
-import { StyleSheet, TouchableOpacity } from 'react-native'
+import { StyleSheet, TouchableOpacity,StyleProp,ViewStyle } from 'react-native'
 import React from 'react'
 import AppText from '../texts/AppText'
 import { s, vs } from 'react-native-size-matters'
@@ -9,22 +9,24 @@ interface AppButtonProps {
     title: string;
     backgroundColor?: string;
     textColor?: string;
+    style?: StyleProp<ViewStyle>;
 }
 
 const AppButton = ({
-    onPress,
-    title,
-    backgroundColor = AppColors.primary,
-    textColor = AppColors.white,
+     onPress,
+  title,
+  backgroundColor = AppColors.primary,
+  textColor = AppColors.white,
+  style,
 }: AppButtonProps) => {
     return (
         <TouchableOpacity
             onPress={onPress}
             activeOpacity={0.8}
-            style={[styles.button, { backgroundColor }]}
+            style={[styles.button, { backgroundColor },style]}
         >
             <AppText
-                variant="bold"
+                variant="medium"
                 style={[styles.title, { color: textColor }]}
             >
                 {title}
@@ -43,6 +45,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignSelf: 'center',
         borderRadius: s(15),
+        marginTop:vs(15),
     },
 
     title: {},

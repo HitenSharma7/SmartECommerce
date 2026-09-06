@@ -5,7 +5,7 @@ import { AppColors } from '../../styles/color'
 
 
 interface AppTextInputProps {
-  value: string;
+  value?: string;
   placeholder?: string;
   secureTextEntry?: boolean;
   keyboardType?: KeyboardTypeOptions;
