@@ -5,7 +5,7 @@ import { AppColors } from '../../styles/color';
 
 interface AppSafeViewProp{
     children:ReactNode,
-    style:ViewStyle,
+    style?:ViewStyle,
 }
 const AppSafeView: FC<AppSafeViewProp> = ({ children, style }) => {
   return (

@@ -7,9 +7,11 @@ import { IMAGES } from '../../constant/image-path'
 import AppButton from '../../components/buttons/AppButton'
 import { s,vs } from 'react-native-size-matters'
 import { AppColors } from '../../styles/color'
+import { useNavigation } from '@react-navigation/native'
 const SignInScreen = () => {
     const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
+const navigation = useNavigation();
   return (
    
     <View style={styles.container}>
@@ -19,9 +21,9 @@ const [password, setPassword] = useState('');
        <AppTextInput placeholder='Enter your Email' secureTextEntry={false} keyboardType='email-address'/>
        <AppTextInput placeholder='Enter your Password' secureTextEntry={true} keyboardType='default'/>
         <AppText variant='bold' >Smart Bazaar</AppText>
-        <AppButton title={"Login"} />
+        <AppButton title={"Login"} onPress={()=> navigation.navigate("MainAppBottomTabs")} />
         <AppButton title={"SignUp"}  style={styles.signUp } textColor={AppColors.primary}
-        onPress={()=>navigation.navigate("SignUpScreen")}/>
+        onPress={()=>navigation.navigate("SignUp")}/>
     </View>
   )
 }
