@@ -5,7 +5,7 @@ import { s, vs } from 'react-native-size-matters'
 import { AppColors } from '../../styles/color'
 
 interface AppButtonProps {
-    onPress: () => void;
+    onPress?: () => void;
     title: string;
     backgroundColor?: string;
     textColor?: string;
