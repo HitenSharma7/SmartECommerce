@@ -10,7 +10,13 @@ import CartScreen from '../screens/cart/CartScreen';
 import { AppColors } from '../styles/color';
 import { s, vs } from 'react-native-size-matters';
 
-const Tab = createBottomTabNavigator();
+export type MainAppBottomTabParamList = {
+  Home: undefined;
+  Cart: undefined;
+  Profile: undefined;
+};
+
+const Tab = createBottomTabNavigator<MainAppBottomTabParamList>();
 
 export default function MainAppBottomTabs() {
   return (
