@@ -1,70 +1,63 @@
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { Control, Controller, FieldValues, Path } from "react-hook-form";
+import AppTextInput from "./AppTextInput";
 
-import React from 'react';
-import { View, TextInputProps,StyleSheet } from 'react-native';
-import {
-  Controller,
-  Control,
-  FieldValues,
-  RegisterOptions,
-} from 'react-hook-form';
-import AppText from '../texts/AppText';
+import AppText from "../texts/AppText";
+import { s, vs } from "react-native-size-matters";
+import { AppColors } from "../../styles/color";
 
-import AppTextInput from './AppTextInput';
-import { vs } from 'react-native-size-matters';
-
-interface Props {
-  name: string;
-  control: Control<any>;
-  rules?: RegisterOptions<any>;
-  keyboardType?: TextInputProps['keyboardType'];
-  placeholder?: string;
+interface AppTextInputControllerProps<T extends FieldValues> {
+  control: Control<T>;
+  name: Path<T>;
+  rules?: object;
+  placeholder: string;
   secureTextEntry?: boolean;
+  keyboardType?: "default" | "email-address" | "numeric";
 }
 
-const AppTextInputControllers = ({
-  name,
+const AppTextInputController = <T extends FieldValues> ({
   control,
+  name,
   rules,
-  keyboardType,
   placeholder,
   secureTextEntry,
-}: Props) => {
+  keyboardType,
+}: AppTextInputControllerProps<T>) => {
   return (
-    <View>
-      <Controller
-        name={name}
-        control={control}
-        rules={rules}
-        render={({ field: { onChange, value } }) => (
-            <>
+    <Controller
+      control={control}
+      name={name}
+      rules={rules}
+      render={({ field: { onChange, value }, fieldState: { error } }) => (
+        <>
           <AppTextInput
             value={value}
             onChangeText={onChange}
-            keyboardType={keyboardType}
             placeholder={placeholder}
             secureTextEntry={secureTextEntry}
-            style={styles.errorInput}
-            
+            keyboardType={keyboardType}
+            style={error && styles.errorInput}
           />
 
-          <AppText style={styles.errormsg}>Some Error Message</AppText>
-          </>
-        )}
-      />
-    </View>
+          {error && <AppText style={styles.textError}>{error.message}</AppText>}
+        </>
+      )}
+    />
   );
 };
 
-export default AppTextInputControllers;
-const styles = StyleSheet.create({
-errorInput: {
-    borderWidth: 1,
-    borderColor: 'red',},
-    errormsg: {
-        color: 'red',
-        fontSize: 12,
-        marginTop: vs(-5),
-        justifyContent:"center",
-      },
+export default AppTextInputController;
 
-})
+const styles = StyleSheet.create({
+  errorInput: {
+    borderColor: AppColors.redColor,
+  },
+  textError: {
+    color: AppColors.redColor,
+    fontSize: s(12),
+    textAlign: "center",
+    marginBottom: vs(10),
+    marginTop: -vs(5),
+  },
+});

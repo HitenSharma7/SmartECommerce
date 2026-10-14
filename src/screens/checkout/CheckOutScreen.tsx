@@ -9,14 +9,27 @@ import AppButton from '../../components/buttons/AppButton'
 import { IS_ANDROID } from '../../constant/constant'
 import AppTextInputControllers from '../../components/inputs/AppTextInputControllers'
 import { useForm } from 'react-hook-form'
+import * as yup from 'yup'
+import { yupResolver } from '@hookform/resolvers/yup'
 
 
+const Schema = yup.object().shape({
+    fullName: yup.string().required("Full Name is required").min(3, "Full Name must be at least 3 characters"),
+
+    phoneNumber: yup.string().required("Phone Number is required").matches(/^[0-9]{10}$/, "Must be a valid 10-digit phone number")
+.min(10, "Phone Number must be at least 10 digits"),
+    DetailedAddress: yup.string().required("Detailed Address is required").min(10, "Detailed Address must be at least 10 characters"),
+
+}).required()
+type formData = yup.InferType<typeof Schema>
 
 const CheckOutScreen = () => {
-    const {control,handleSubmit} =useForm({})
-    const saveOrder=(formData)=>{
-    console.log("Form Data:",formData)
-}
+    const { control, handleSubmit } = useForm({
+        resolver: yupResolver(Schema),
+    })
+    const saveOrder = (formData: formData) => {
+        console.log("Form Data:", formData)
+    }
     return (
         <AppSafeView>
 
@@ -24,14 +37,14 @@ const CheckOutScreen = () => {
             <View style={styles.inputContainer}>
 
                 <AppTextInputControllers
-                control={control}
-                name={"fullName"}
+                    control={control}
+                    name={"fullName"}
                     placeholder="Enter your name"
                 />
 
-            <AppTextInputControllers
-                control={control}
-                name={"phoneNumber"}
+                <AppTextInputControllers
+                    control={control}
+                    name={"phoneNumber"}
                     placeholder="Enter your phone number"
                 />
 
