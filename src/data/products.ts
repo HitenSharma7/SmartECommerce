@@ -104,5 +104,112 @@ export const products = [
     imageURL:
       "https://evolvedchargers.com/cdn/shop/files/minimal-iphone-case-for-apple-iphone-17-pro-max_5_1.jpg?v=1758817550&width=1000",
   },
+{
+  id: 17,
+  price: 999,
+  title: "JBL Wired Gaming Headset",
+  imageURL:
+    "https://m.media-amazon.com/images/I/61CGHv6kmWL.jpg",
+},
+
+  {
+    id: 19,
+    price: 1299,
+    title: "Men's Casual Shirt",
+    imageURL: "https://images.unsplash.com/photo-1603252109303-2751441dd157?w=500",
+  },
+  {
+    id: 20,
+    price: 1999,
+    title: "Women's Sneakers",
+    imageURL: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
+  },
+  {
+    id: 21,
+    price: 799,
+    title: "Classic Wrist Watch",
+    imageURL: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500",
+  },
+  {
+    id: 22,
+    price: 499,
+    title: "Leather Wallet",
+    imageURL: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500",
+  },
+  {
+    id: 23,
+    price: 349,
+    title: "Skincare Face Wash",
+    imageURL: "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=500",
+  },
+  {
+    id: 24,
+    price: 599,
+    title: "Perfume Bottle",
+    imageURL: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=500",
+  },
+  {
+    id: 25,
+    price: 299,
+    title: "Ceramic Coffee Mug",
+    imageURL: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500",
+  },
+  {
+    id: 26,
+    price: 1499,
+    title: "Decorative Table Lamp",
+    imageURL: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500",
+  },
+  {
+    id: 27,
+    price: 899,
+    title: "Yoga Exercise Mat",
+    imageURL: "https://images.unsplash.com/photo-1592432678016-e910b452f9a2?w=500",
+  },
+  {
+    id: 28,
+    price: 499,
+    title: "Stainless Steel Water Bottle",
+    imageURL: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500",
+  },
+  {
+    id: 29,
+    price: 199,
+    title: "Organic Green Apples",
+    imageURL: "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=500",
+  },
+  {
+    id: 30,
+    price: 399,
+    title: "Chocolate Cookies",
+    imageURL: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=500",
+  },
+ 
+{
+  id: 31,
+  price: 30,
+  title: "Women's Floral Dress",
+  imageURL:
+    "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=500",
+},
+{
+  id: 32,
+  price: 8,
+  title: " Biryani",
+  imageURL:
+    "https://cdn.pixabay.com/photo/2024/01/18/17/20/ai-generated-8517258_1280.jpg",
+},
+
+{
+  id: 33,
+  price: 60,
+  title: "Red Embroidered Lehenga Choli",
+  imageURL:
+    "https://tse4.mm.bing.net/th/id/OIP.2k9n-6BNYDDydjNJeKUT7QHaLH?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+},
+
+
 
 ];
+
+

@@ -7,23 +7,37 @@ import { s, vs } from 'react-native-size-matters'
 import { AppColors } from '../../styles/color'
 import AppButton from '../../components/buttons/AppButton'
 import { IS_ANDROID } from '../../constant/constant'
+import AppTextInputControllers from '../../components/inputs/AppTextInputControllers'
+import { useForm } from 'react-hook-form'
+
+
 
 const CheckOutScreen = () => {
+    const {control,handleSubmit} =useForm({})
+    const saveOrder=(formData)=>{
+    console.log("Form Data:",formData)
+}
     return (
         <AppSafeView>
 
             {/* Input Container */}
             <View style={styles.inputContainer}>
 
-                <AppTextInput
+                <AppTextInputControllers
+                control={control}
+                name={"fullName"}
                     placeholder="Enter your name"
                 />
 
-                <AppTextInput
-                    placeholder="Enter your email"
+            <AppTextInputControllers
+                control={control}
+                name={"phoneNumber"}
+                    placeholder="Enter your phone number"
                 />
 
-                <AppTextInput
+                <AppTextInputControllers
+                    control={control}
+                    name={"DetailedAddress"}
                     placeholder="Detailed Address"
                 />
 
@@ -33,6 +47,7 @@ const CheckOutScreen = () => {
             <View style={styles.bottomButtonContainer}>
                 <AppButton
                     title="Place Order"
+                    onPress={handleSubmit(saveOrder)}
                 />
             </View>
 
